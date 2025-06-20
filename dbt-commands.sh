@@ -19,6 +19,7 @@ dotenv run -- dbt compile
 dotenv run -- dbt test --select test_type:unit
 
 dotenv run -- dbt source freshness
+#dotenv run -- dbt run --full-refresh
 dotenv run -- dbt build --full-refresh
 dotenv run -- dbt test --select test_type:data
 

@@ -1,18 +1,20 @@
 """
 Time the queries in the queries directory.
 """
-from pathlib import Path
+
+import pathlib
 
 import db_query_profiler
 import duckdb
 
-HERE = Path(__file__).parent
+HERE = pathlib.Path(__file__).parent
 
 
 def main() -> None:
     """
     Time the queries in the queries directory.
     """
+
     db_connection = duckdb.connect(
         database=str(HERE.parent / "billiam_database" / "billiam.duckdb"),
         read_only=True,

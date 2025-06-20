@@ -6,7 +6,7 @@ models:
     description: '{{ doc("stg__daily_tracker") }}'
     meta:
       source: >
-        [https://github.com/Bilbottom/daily-tracker](https://github.com/Bilbottom/daily-tracker)
+        [https://github.com/billwallis/daily-tracker](https://github.com/billwallis/daily-tracker)
     columns:
       - name: date_time
         data_type: timestamp

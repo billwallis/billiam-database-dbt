@@ -1,36 +1,40 @@
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
 
-
-[tool.poetry]
+[project]
 name = "billiam-database"
 version = "0.0.0"
 description = "OLAP database project for life admin (feat. dbt)."
-authors = ["Bilbottom"]
+authors = [{name = "billwallis"}]
 readme = "README.md"
 keywords = ["sql", "dbt", "duckdb"]
-repository = "https://github.com/Bilbottom/billiam-database"
-documentation = "https://bilbottom.github.io/billiam-database/#!/overview"
-package-mode = false
+requires-python = ">=3.11"
+dependencies = [
+    "dbt-core>=1.8,<1.9",
+    "dbt-duckdb>=1.8,<1.9",
+    "duckdb>=1.0.0",
+    "python-dotenv[cli]>=1.1.0",
+]
 
-[tool.poetry.dependencies]
-python = "~3.11"
-dbt-core = "~1.8"
-dbt-duckdb = "~1.8"
-duckdb = "1.0.0"
-python-dotenv = {extras = ["cli"], version = "^1"}
+[dependency-groups]
+dev = [
+    "coverage-badge>=1.1.0",
+    "db-query-profiler>=0.0.8",
+    "pre-commit>=4.1.0",
+]
+test = [
+    "pytest>=8.3.5",
+    "pytest-cov>=6.0.0",
+]
 
-[tool.poetry.group]
-dev.optional = true
-ide.optional = true
 
-[tool.poetry.group.dev.dependencies]
-pre-commit = "^3"
-db-query-profiler = "^0.0.6"
+[tool.setuptools]
+packages = []
 
-[tool.poetry.group.ide.dependencies]
-black = "*"
+
+[tool.uv]
+required-version = ">=0.7.0,<1.0.0"
 
 
 # https://docs.sqlfluff.com/en/stable/configuration.html#default-configuration

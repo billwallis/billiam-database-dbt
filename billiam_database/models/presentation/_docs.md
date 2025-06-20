@@ -30,7 +30,7 @@ Work tracker history from 2019-04-23.
 
 The source of this model is my "automated" timesheet application, available at:
 
-- https://github.com/Bilbottom/daily-tracker
+- https://github.com/billwallis/daily-tracker
 
 Each row corresponds to an interval of work, which has a timestamp, details about the work, and the duration of the interval.
 
