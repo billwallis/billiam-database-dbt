@@ -1,3 +1,8 @@
+### IDE and system files
+.vscode/
+.idea/
+.DS_Store
+
 ###  dbt artifacts
 logs/
 dbt_packages/
@@ -16,7 +21,7 @@ billiam_database/seeds/counterparty_exclusions.csv
 *.xsl?
 
 ###  IntelliJ project files
-.idea/
+.run/
 *.iml
 out
 gen
